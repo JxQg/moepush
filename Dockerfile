@@ -29,7 +29,6 @@ RUN npm install -g pnpm@10.4.1
 # 从构建阶段复制必要文件
 COPY --from=builder /build/node_modules ./node_modules
 COPY --from=builder /build/package.json ./
-COPY --from=builder /build/next.config.js ./
 COPY --from=builder /build/public ./public
 COPY --from=builder /build/app ./app
 COPY --from=builder /build/lib ./lib
