@@ -1,0 +1,10 @@
+services:
+  moepush:
+    image: moepush/moepush:latest
+    container_name: moepush
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config/.env:/app/.env
+      - ./data:/app/.wrangler/state/v3/d1
+    restart: unless-stopped
