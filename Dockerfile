@@ -31,6 +31,7 @@ COPY --from=builder /build/node_modules ./node_modules
 COPY --from=builder /build/package.json ./
 COPY --from=builder /build/public ./public
 COPY --from=builder /build/app ./app
+COPY --from=builder /build/drizzle.config.ts ./
 COPY --from=builder /build/lib ./lib
 COPY --from=builder /build/wrangler.example.json ./
 COPY docker-entrypoint.sh /usr/local/bin/
