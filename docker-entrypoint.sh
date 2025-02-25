@@ -9,7 +9,6 @@ if [ ! -f "/app/wrangler.json" ]; then
     echo "Created wrangler.json with environment variables"
 fi
 
-pnpm drizzle-kit generate
-pnpm wrangler d1 migrations apply moepush --local
+pnpm run db:migrate-local
 
 exec "$@"
