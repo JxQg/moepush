@@ -2,7 +2,7 @@
 FROM node:20-alpine AS builder
 
 # 安装 pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN npm install -g pnpm@10.4.1
 
 # 设置工作目录
 WORKDIR /build
@@ -24,7 +24,7 @@ WORKDIR /app
 RUN apk add --no-cache sqlite
 
 # 安装 pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN npm install -g pnpm@10.4.1
 
 # 从构建阶段复制必要文件
 COPY --from=builder /build/node_modules ./node_modules
